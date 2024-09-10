@@ -1,0 +1,372 @@
+/* Reset básico e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e8eff1;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contêiner principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+/* Cabeçalhos */
+h1, h2 {
+    color: #004d99;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.8em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+/* Botões principais */
+button {
+    background-color: #004d99;
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #003d7a;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #002c61;
+    transform: translateY(0);
+}
+
+button i {
+    margin-right: 8px;
+}
+
+/* Seções */
+.describe, .simplify {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.describe h2, .simplify h2 {
+    margin-bottom: 20px;
+}
+
+/* Campos de formulário */
+.form-campo {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #000; /* Cor do texto padrão */
+}
+
+/* Modo Noturno */
+.modo-noturno .form-campo {
+    background-color: #333333;
+    border-color: #555555;
+    color: #ffffff; /* Cor do texto no modo noturno */
+}
+
+/* Modo Alto Contraste */
+.alto-contraste .form-campo {
+    background-color: #000000;
+    border-color: #ffffff;
+    color: #ffffff; /* Cor do texto no modo alto contraste */
+}
+
+/* Inversão de Cores */
+.inverter .form-campo {
+    background-color: #ffffff; /* A cor de fundo invertida */
+    border-color: #000000; /* A cor da borda invertida */
+    color: #000000; /* Cor do texto invertida */
+}
+
+/* Estado de foco para todos os modos */
+.form-campo:focus {
+    outline: none;
+    border-color: #007bff; /* Cor da borda ao focar */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra ao focar */
+}
+
+
+.form-campo:focus {
+    border-color: #004d99;
+    box-shadow: 0 0 8px rgba(0, 77, 153, 0.2);
+    outline: none;
+}
+
+.form-campo::placeholder {
+    color: #888;
+}
+
+/* Resultados */
+#description-result, #simplified-text-result {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+#description-result {
+    border-color: #28a745; /* Verde para descrição de imagem */
+}
+
+#simplified-text-result {
+    border-color: #007bff; /* Azul para texto simplificado */
+}
+
+/* Estilos de acessibilidade */
+.accessibilidade {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.accessibilidade button {
+    background-color: #004d99;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.accessibilidade button:hover {
+    background-color: #003d7a;
+}
+
+/* Modo alto contraste */
+.alto-contraste {
+    background-color: #000;
+    color: #fff;
+}
+
+.alto-contraste input[type="text"],
+.alto-contraste textarea {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.alto-contraste button {
+    background-color: #fff;
+    color: #000;
+}
+
+.alto-contraste button:hover {
+    background-color: #ccc;
+}
+
+/* Modo noturno */
+.modo-noturno {
+    background-color: #2b2b2b;
+    color: #f5f5f5;
+}
+
+.modo-noturno input[type="text"],
+.modo-noturno textarea {
+    background-color: #3c3c3c;
+    color: #f5f5f5;
+    border: 1px solid #555;
+}
+
+.modo-noturno button {
+    background-color: #4a4a4a;
+    color: #f5f5f5;
+}
+
+.modo-noturno button:hover {
+    background-color: #6a6a6a;
+}
+
+/* Estilo para o rodapé */
+footer {
+    padding: 20px;
+    background-color: #004d99;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .container {
+        padding: 40px;
+    }
+
+    .describe, .simplify {
+        margin-bottom: 0;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .describe, .simplify {
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos gerais */
+@media (max-width: 768px) {
+    /* Contêiner principal */
+    .container {
+        padding: 15px;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    /* Cabeçalhos */
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    /* Botões principais */
+    button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Seções */
+    .describe, .simplify {
+        padding: 15px;
+        margin-bottom: 20px;
+        box-shadow: none;
+    }
+
+    /* Campos de formulário */
+    .form-campo {
+        padding: 10px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    /* Resultados */
+    #description-result, #simplified-text-result {
+        padding: 15px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    /* Estilos de acessibilidade */
+    .accessibilidade {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .accessibilidade button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Rodapé */
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+/* Estilos para tamanhos de tela maiores que 768px */
+@media (min-width: 769px) {
+    /* Contêiner principal */
+    .container {
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    /* Botões principais */
+    button {
+        width: auto;
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+
+    /* Campos de formulário */
+    .form-campo {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    /* Resultados */
+    #description-result, #simplified-text-result {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    /* Estilos de acessibilidade */
+    .accessibilidade {
+        flex-direction: row;
+    }
+
+    .accessibilidade button {
+        width: auto;
+        margin-right: 12px;
+    }
+}
+
+

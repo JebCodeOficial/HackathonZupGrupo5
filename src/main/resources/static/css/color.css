@@ -1,0 +1,19 @@
+/* Modo Noturno */
+.modo-noturno {
+    background-color: #212121;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.modo-noturno button {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.modo-noturno a {
+    color: #29e784;
+}
+
+.modo-noturno :focus {
+    outline: 3px solid #ffffff;
+}

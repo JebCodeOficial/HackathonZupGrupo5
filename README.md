@@ -1,3 +1,13 @@
+# Hackathon Zup
+
+<div align="center">
+  <img src="https://media.licdn.com/dms/image/v2/D4D22AQFczBz7XGLQ7A/feedshare-shrink_800/feedshare-shrink_800/0/1726057792418?e=1729123200&v=beta&t=ZQNQc1wH47sK_BBMgp7jFuwSnCJE1S8f5VUgxK9rc-A" alt="Hackathon Zup Afirmativo para Pessoas com Deficiência">
+</div>
+
+**Descrição da imagem**: No topo central da imagem, a marca do Hackathon. Logo abaixo, o texto destacado: **Hackathon Afirmativo para Pessoas com Deficiência**. Mais abaixo, um quadro em destaque com a frase: **Eu estou participando!** Seguido das hashtags: `#Diversidade`, `#Inclusão`, `#Tecnologia`. No rodapé da imagem, as marcas da **Zup** e **Diversidade e Inclusão**.
+
+---
+
 # Documentação Acessível com IA - Hackathon Zup Equipe 5
 
 Este projeto foi desenvolvido como parte do Hackathon da Zup, com o objetivo de criar uma solução inovadora para a produção de documentação com 100% de acessibilidade, utilizando IA para facilitar o acesso e compreensão, especialmente para pessoas com deficiência visual ou que utilizam leitores de tela.

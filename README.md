@@ -51,15 +51,23 @@ O projeto tem como objetivo melhorar a acessibilidade da documentação técnica
 - **GitHub API**: Para extrair o conteúdo dos arquivos `README.md` dos repositórios.
 - **PDFBox**: Biblioteca utilizada para gerar arquivos PDF a partir de textos.
 
+### Frontend
+- **HTML5**: Estrutura da interface de usuário.
+- **CSS3**: Estilização com foco em acessibilidade, incluindo suporte a modos de cores para alto contraste e modo noturno.
+- **JavaScript (JQuery)**: Scripts responsáveis pela interação com a API, modificação dinâmica de estilos (tamanho de fonte, cores) e funcionalidades de acessibilidade.
+- **FontAwesome**: Biblioteca de ícones utilizada nos controles de acessibilidade (alteração de fonte, cores, etc).
+- **VLibras**: Integração com a API VLibras para tradução de conteúdo em Libras (Língua Brasileira de Sinais).
+
 ## Instalação e Execução
 
 ### Pré-requisitos
 
 - **Java 17 ou superior**
-- **Maven** (ou outra ferramenta de build compatível)
+- **Maven** (para backend)
 
 ### Passos para Executar
 
+#### Backend
 1. **Clone o repositório**:
    ```bash
    git clone https://github.com/JebCodeOficial/HackathonZupGrupo5.git

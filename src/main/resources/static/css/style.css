@@ -19,7 +19,7 @@ body {
 /* Contêiner principal */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1500px;
     padding: 30px;
     background-color: #ffffff;
     border-radius: 15px;
@@ -368,5 +368,215 @@ footer {
         margin-right: 12px;
     }
 }
+
+
+
+/* Estilo adicional para o select dentro da classe form-campo */
+select.form-campo {
+    appearance: none; /* Remove o estilo padrão do select */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="%23333" stroke-width=".75" d="M2 0L0 2h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+/* Efeito de foco no select */
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Melhorias visuais para dispositivos móveis */
+@media (max-width: 768px) {
+    select {
+        max-width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+}
+
+.readme-content {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    color: #333;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.loading-indicator {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.loading-indicator::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.textoTraduzido {
+    margin-top: 10px;
+}
+
+.textoTraduzido p {
+    margin: 0;
+}
+
+.textoTraduzido p:first-child {
+    font-weight: bold;
+}
+
+.textoTraduzido p + p {
+    margin-top: 5px;
+}
+
+.textoTraduzido p + p::before {
+    content: " - ";
+}
+
+.textoTraduzido p + p::before {
+    content: " - ";
+}
+
+.textoTraduzido p + p::before {
+    content: " - ";
+}
+
+/* Margem Superior (margin-top) */
+.mt-1 { margin-top: 5px; }
+.mt-2 { margin-top: 10px; }
+.mt-3 { margin-top: 15px; }
+.mt-4 { margin-top: 20px; }
+.mt-5 { margin-top: 30px; }
+
+/* Margem Inferior (margin-bottom) */
+.mb-1 { margin-bottom: 5px; }
+.mb-2 { margin-bottom: 10px; }
+.mb-3 { margin-bottom: 15px; }
+.mb-4 { margin-bottom: 20px; }
+.mb-5 { margin-bottom: 30px; }
+
+/* Para margens maiores */
+.mt-6 { margin-top: 50px; }
+.mb-6 { margin-bottom: 50px; }
+
+
+#loaderGerarReamde {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0e1a33;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+#loaderGerarReamde::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #0e1a33; /* Cor do spinner */
+    border-top-color: transparent;
+    border-radius: 50%;
+    margin-left: 10px;
+    animation: spin 1s linear infinite;
+}
+
+/* Animação de rotação */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estilos para o container #readmeContent */
+#readmeContent {
+    font-size: 12px; /* Define o tamanho do texto */
+    line-height: 1.5; /* Melhora o espaçamento entre linhas */
+    font-family: Arial, sans-serif; /* Define a fonte */
+    color: #333; /* Cor do texto */
+    background-color: #f9f9f9; /* Cor de fundo suave */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda ao redor do conteúdo */
+    border-radius: 5px; /* Bordas arredondadas */
+    overflow: auto; /* Permite rolagem caso o conteúdo seja muito longo */
+}
+
+/* Estilo para tags específicas dentro do #readmeContent */
+#readmeContent h1,
+#readmeContent h2,
+#readmeContent h3 {
+    color: #2c3e50; /* Define a cor para cabeçalhos */
+    margin-top: 15px; /* Espaçamento superior */
+    margin-bottom: 10px; /* Espaçamento inferior */
+}
+
+#readmeContent p {
+    margin: 10px 0; /* Margem entre parágrafos */
+}
+
+#readmeContent a {
+    color: #2980b9; /* Cor para links */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+#readmeContent a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+#readmeContent ul,
+#readmeContent ol {
+    margin-left: 20px; /* Margem para listas */
+}
+
+/* Adicione outros estilos conforme necessário para os elementos dentro do README */
+
+
+#errorMessage {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    display: none;
+    text-align: center;
+}
+
 
 

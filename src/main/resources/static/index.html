@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentação Acessível com IA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/color.css">
     <link rel="stylesheet" href="css/inverter.css">
     <link rel="stylesheet" href="css/contraste.css">
@@ -12,72 +13,13 @@
     <script src="js/descreverImagemOuvirTexto.js"></script>
     <script src="js/acessivel.js"></script>
     <script src="js/simplifyText.js"></script>
-    <style>
-        .hidden {
-            display: none;
-        }
+    <script src="js/gerarDocumentoRepo.js"></script>
 
-        .visible {
-            display: block;
-        }
-
-         .loading-indicator {
-             display: none;
-             position: absolute;
-             top: 50%;
-             left: 50%;
-             transform: translate(-50%, -50%);
-             background-color: rgba(255, 255, 255, 0.8);
-             padding: 20px;
-             border-radius: 10px;
-             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-         }
-
-        .loading-indicator::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 50px;
-            margin: 10px auto;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #3498db;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .textoTraduzido {
-            margin-top: 10px;
-        }
-
-        .textoTraduzido p {
-            margin: 0;
-        }
-
-        .textoTraduzido p:first-child {
-            font-weight: bold;
-        }
-
-        .textoTraduzido p + p {
-            margin-top: 5px;
-        }
-
-        .textoTraduzido p + p::before {
-            content: " - ";
-        }
-
-        .textoTraduzido p + p::before {
-            content: " - ";
-        }
-
-        .textoTraduzido p + p::before {
-            content: " - ";
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.8/purify.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.8/purify.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -114,7 +56,26 @@
         <p class="form-campo">Obs: A descrição da imagem é gerada automaticamente por meio de uma IA.</p>
     </div>
 
-    <div class="simplify">
+    <div class="describe">
+        <h2>Gerar Documentação do GitHub</h2>
+        <form id="repoForm">
+            <input type="text" id="repoUrl" class="form-campo" placeholder="Insira o link do repositório do GitHub" required>
+            <select id="format" class="form-campo"></select>
+            <button type="submit">Gerar README</button>
+        </form>
+
+        <p id="loaderGerarReamde" class="hidden">Gerando README...</p>
+
+        <div id="readmeContent" class="readme-content mt-2" style="display:none;"></div>
+        <button id="downloadButton" class="mt-2" style="display:none;">Baixar Documento</button>
+        <br>
+        <p id="errorMessage" class="mb-3" style="color: red;"></p>
+
+        <p class="form-campo">Obs: O documento é gerado automaticamente a partir do README do repositório.</p>
+    </div>
+
+
+    <!--<div class="simplify">
         <h2>Simplificar Texto</h2>
         <textarea id="texto" class="form-campo" placeholder="Insira o texto para simplificar" aria-label="Texto para simplificar"></textarea>
         <button onclick="simplifyText()">Simplificar Texto</button>
@@ -123,7 +84,7 @@
         <div id="simplified-error" class="form-campo hidden" role="region" aria-live="assertive" style="color: red;"></div>
         <br>
         <p class="form-campo">Obs: O texto simplificado é gerado automaticamente por meio de uma IA.</p>
-    </div>
+    </div>-->
 </div>
 <footer>
     <p>Todos os direitos reservados © 2024</p>

@@ -16,6 +16,20 @@ body {
     padding: 20px;
 }
 
+/* Div superior (header) */
+.top-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 12px;
+    height: 20vh; /* Define a altura da div superior */
+    background: linear-gradient(to left, #0B0F22, #5B7854); /* Gradiente inverso ao footer */
+}
+
+.top-div img {
+    height: 150px; /* Tamanho da logo no topo */
+}
 /* Contêiner principal */
 .container {
     width: 100%;

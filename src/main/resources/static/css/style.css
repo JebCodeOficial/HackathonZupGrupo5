@@ -226,14 +226,37 @@ button i {
 }
 
 /* Estilo para o rodapé */
+/* Estilos do footer */
 footer {
-    padding: 20px;
-    background-color: #004d99;
-    color: #ffffff;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    padding: 12px;
     border-radius: 12px;
-    margin-top: 30px;
+    background: linear-gradient(to right, #0B0F22, #5B7854); /* Gradiente baseado na imagem */
+
+}
+
+footer img {
+    height: 120px; /* Tamanho das logos */
+}
+
+footer .logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos opcionais para links ou informações no footer */
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #A8DADC; /* Cor para hover */
 }
 
 /* Responsividade */

@@ -84,7 +84,7 @@
     <img src="https://d335luupugsy2.cloudfront.net/cms/files/449712/1720748328/$tzpt6lx4g2r" alt="Logo Hackathon">
 </div>
 <div class="container">
-    <h1>Documentação Acessível com IA</h1>
+    <h1>Geração de Documentação Técnica Acessível com IA</h1>
     <div class="accessibilidade">
         <button onclick="mudaFonte('menos')" title="Diminuir fonte"><i class="fas fa-minus"></i> Fonte menor</button>
         <button onclick="mudaFonte('mais')" title="Aumentar fonte"><i class="fas fa-plus"></i> Fonte maior</button>
@@ -104,9 +104,9 @@
     </div>
 
     <div class="describe">
-        <h2>Descrever Imagem</h2>
-        <input id="url-imagem" class="form-campo" type="text" placeholder="URL da imagem" aria-label="URL da imagem">
-        <button onclick="descreverImagem()">Descrever Imagem</button>
+        <h2>Gerar Documentação de Imagem</h2>
+        <input id="url-imagem" class="form-campo" type="text" placeholder="Cole a URL da imagem aqui." aria-label="URL da imagem">
+        <button onclick="descreverImagem()">Gerar Documentação</button>
         <br>
         <img id="imagem" class="form-campo hidden" src="" alt="Imagem para descrever">
         <div id="description-result" class="form-campo textoTraduzido hidden" role="region" aria-live="polite"></div>
@@ -114,18 +114,18 @@
         <div id="loading-indicator" class="hidden loading-indicator">Tradutor carregando...</div>
         <div id="description-error" class="form-campo hidden" role="region" aria-live="assertive" style="color: red;"></div>
         <br>
-        <p class="form-campo">Obs: A descrição da imagem é gerada automaticamente por meio de uma IA.</p>
+        <p class="form-campo">Obs: A documentação técnica é gerada automaticamente a partir da análise da imagem usando IA.</p>
     </div>
 
     <div class="simplify">
-        <h2>Simplificar Texto</h2>
-        <textarea id="texto" class="form-campo" placeholder="Insira o texto para simplificar" aria-label="Texto para simplificar"></textarea>
-        <button onclick="simplifyText()">Simplificar Texto</button>
+        <h2>Gerar Documentação de Código</h2>
+        <textarea id="texto" class="form-campo" placeholder="Cole o código para gerar a documentação aqui." aria-label="Texto para simplificar"></textarea>
+        <button onclick="simplifyText()">Gerar Documentação</button>
         <br>
         <div id="simplified-text-result" class="form-campo hidden" role="region" aria-live="polite"></div>
         <div id="simplified-error" class="form-campo hidden" role="region" aria-live="assertive" style="color: red;"></div>
         <br>
-        <p class="form-campo">Obs: O texto simplificado é gerado automaticamente por meio de uma IA.</p>
+        <p class="form-campo">Obs: A documentação técnica é gerada automaticamente a partir do código inserido usando IA.</p>
     </div>
 </div>
 <footer>

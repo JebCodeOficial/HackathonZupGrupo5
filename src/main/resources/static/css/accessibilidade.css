@@ -1,0 +1,122 @@
+/* Inversão de Cores */
+.inverter {
+    filter: invert(1);
+    transition: all 0.5s ease;
+}
+
+.inverter button {
+    filter: invert(1);
+}
+
+.inverter :focus {
+    outline: 3px solid #ffffff;
+}
+
+/* Modo Noturno */
+.modo-noturno {
+    background-color: #212121;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.modo-noturno button {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.modo-noturno a {
+    color: #29e784;
+}
+
+.modo-noturno :focus {
+    outline: 3px solid #ffffff;
+}
+
+/* Modo alto contraste (Preto e Branco) */
+.alto-contraste {
+    background-color: #000000;
+    color: #ffffff;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+.alto-contraste input, .alto-contraste button {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.alto-contraste a {
+    color: #ffffff;
+}
+
+.alto-contraste :focus {
+    outline: 3px solid #ffffff;
+}
+
+
+
+
+/* Estilos de acessibilidade */
+.accessibilidade {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.accessibilidade button {
+    background-color: #004d99;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.accessibilidade button:hover {
+    background-color: #003d7a;
+}
+
+/* Modo alto contraste */
+.alto-contraste {
+    background-color: #000;
+    color: #fff;
+}
+
+.alto-contraste input[type="text"],
+.alto-contraste textarea {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.alto-contraste button {
+    background-color: #fff;
+    color: #000;
+}
+
+.alto-contraste button:hover {
+    background-color: #ccc;
+}
+
+/* Modo noturno */
+.modo-noturno {
+    background-color: #2b2b2b;
+    color: #f5f5f5;
+}
+
+.modo-noturno input[type="text"],
+.modo-noturno textarea {
+    background-color: #3c3c3c;
+    color: #f5f5f5;
+    border: 1px solid #555;
+}
+
+.modo-noturno button {
+    background-color: #4a4a4a;
+    color: #f5f5f5;
+}
+
+.modo-noturno button:hover {
+    background-color: #6a6a6a;
+}

@@ -6,93 +6,30 @@
     <title>Documentação Acessível com IA</title>
     <link rel="icon" href="https://scontent.fbnu3-1.fna.fbcdn.net/v/t39.30808-6/347596707_231143979554244_2440681729413608587_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=X8Dl1__SgKgQ7kNvgH0YO7o&_nc_ht=scontent.fbnu3-1.fna&_nc_gid=Ap7fgP-S5ikflQ8x5ekNwGt&oh=00_AYCwwMPegHCnoW0KoGchmrAALFJK1IatVO-_8qYTnBaiGQ&oe=66EBA95E" type="image/jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/color.css">
-    <link rel="stylesheet" href="css/inverter.css">
-    <link rel="stylesheet" href="css/contraste.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/descreverImagemOuvirTexto.js"></script>
-    <script src="js/acessivel.js"></script>
-    <script src="js/simplifyText.js"></script>
-    <style>
-        .hidden {
-            display: none;
-        }
-
-        .visible {
-            display: block;
-        }
-
-         .loading-indicator {
-             display: none;
-             position: absolute;
-             top: 50%;
-             left: 50%;
-             transform: translate(-50%, -50%);
-             background-color: rgba(255, 255, 255, 0.8);
-             padding: 20px;
-             border-radius: 10px;
-             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-         }
-
-        .loading-indicator::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 50px;
-            margin: 10px auto;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #3498db;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .textoTraduzido {
-            margin-top: 10px;
-        }
-
-        .textoTraduzido p {
-            margin: 0;
-        }
-
-        .textoTraduzido p:first-child {
-            font-weight: bold;
-        }
-
-        .textoTraduzido p + p {
-            margin-top: 5px;
-        }
-
-        .textoTraduzido p + p::before {
-            content: " - ";
-        }
-
-        .textoTraduzido p + p::before {
-            content: " - ";
-        }
-
-        .textoTraduzido p + p::before {
-            content: " - ";
-        }
-    </style>
+    <link rel="stylesheet" href="css/accessibilidade.css">
+    <script src="js/descricaoImagem.js"></script>
+    <script src="js/accessibilidade.js"></script>
+    <script src="js/simplificarTexto.js"></script>
 </head>
 <body>
-<div class="top-div">
-    <img src="https://d335luupugsy2.cloudfront.net/cms/files/449712/1720748328/$tzpt6lx4g2r" alt="Logo Hackathon">
-</div>
-<div class="container">
+
+<header class="top-div">
+    <img src="https://d335luupugsy2.cloudfront.net/cms/files/449712/1720748328/$tzpt6lx4g2r" alt="Logo do Hackathon Zup" />
+</header>
+
+<main class="container mb-2">
     <h1>Geração de Documentação Técnica Acessível com IA</h1>
-    <div class="accessibilidade">
-        <button onclick="mudaFonte('menos')" title="Diminuir fonte"><i class="fas fa-minus"></i> Fonte menor</button>
-        <button onclick="mudaFonte('mais')" title="Aumentar fonte"><i class="fas fa-plus"></i> Fonte maior</button>
-        <button onclick="mudaFonte('padrao')" title="Restaurar fonte"><i class="fas fa-sync-alt"></i> Fonte padrão</button>
-        <button onclick="mudaContraste()" title="Preto e Branco"><i class="fas fa-palette"></i> Preto e Branco</button>
-        <button onclick="mudaCor()" title="Noturno"><i class="fas fa-moon"></i> Modo Noturno</button>
-        <button onclick="inverterCor()" title="Inverter"><i class="fas fa-exchange-alt"></i> Inverter Cores</button>
+
+    <section aria-label="Configurações de Acessibilidade">
+        <div class="accessibilidade">
+            <button onclick="mudaFonte('menos')" title="Diminuir fonte"><i class="fas fa-minus"></i> Fonte menor</button>
+            <button onclick="mudaFonte('mais')" title="Aumentar fonte"><i class="fas fa-plus"></i> Fonte maior</button>
+            <button onclick="mudaFonte('padrao')" title="Restaurar fonte"><i class="fas fa-sync-alt"></i> Fonte padrão</button>
+            <button onclick="mudaContraste()" title="Modo Preto e Branco"><i class="fas fa-palette"></i> Preto e Branco</button>
+            <button onclick="mudaCor()" title="Modo Noturno"><i class="fas fa-moon"></i> Modo Noturno</button>
+            <button onclick="inverterCor()" title="Inverter cores"><i class="fas fa-exchange-alt"></i> Inverter Cores</button>
+        </div>
 
         <div vw class="enabled">
             <div vw-access-button class="active"></div>
@@ -101,44 +38,65 @@
             </div>
         </div>
         <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-        <script>  new window.VLibras.Widget('https://vlibras.gov.br/app'); </script>
-    </div>
+        <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+    </section>
 
-    <div class="describe">
+    <section class="describe">
         <h2>Gerar Documentação de Imagem</h2>
-        <input id="url-imagem" class="form-campo" type="text" placeholder="Cole a URL da imagem aqui." aria-label="URL da imagem">
-        <button onclick="descreverImagem()">Gerar Documentação</button>
-        <br>
-        <img id="imagem" class="form-campo hidden" src="" alt="Imagem para descrever">
-        <div id="description-result" class="form-campo textoTraduzido hidden" role="region" aria-live="polite"></div>
-        <button id="botaoOuvirTexto" class="hidden" onclick="ouvirTexto()">Ouvir Tradução</button>
-        <div id="loading-indicator" class="hidden loading-indicator">Tradutor carregando...</div>
+
+        <input id="url-imagem" class="form-campo" type="text" placeholder="Cole a URL da imagem aqui." aria-label="Campo de URL da imagem">
+
+        <button class="mb-2" onclick="descreverImagem()">Gerar Documentação</button>
+
+        <div class="resultado">
+            <img id="imagem" class="form-campo hidden" src="" alt="Imagem a ser descrita">
+            <div id="description-result" class="form-campo hidden" role="region" aria-live="polite"></div>
+        </div>
+
+        <div id="loading-indicator" class="hidden loader">Carregando descrição...</div>
+
+        <time id="modal-time" class="hidden"></time> <!-- Temporizador -->
+
+        <button id="botaoOuvirTexto" class="hidden mt-2 mb-2" onclick="ouvirTexto()">Ouvir Tradução</button>
+        <button id="pararOuvir" class="hidden mt-2 mb-2" onclick="pararOuvir()">Parar Leitura</button> <!-- Botão de parar leitura -->
+
         <div id="description-error" class="form-campo hidden" role="region" aria-live="assertive" style="color: red;"></div>
-        <br>
+
         <p class="form-campo">Obs: A documentação técnica é gerada automaticamente a partir da análise da imagem usando IA.</p>
-    </div>
+    </section>
 
-    <div class="simplify">
+    <section class="simplify">
         <h2>Gerar Documentação de Código</h2>
-        <textarea id="texto" class="form-campo" placeholder="Cole o código para gerar a documentação aqui." aria-label="Texto para simplificar"></textarea>
-        <button onclick="simplifyText()">Gerar Documentação</button>
-        <br>
-        <div id="simplified-text-result" class="form-campo hidden" role="region" aria-live="polite"></div>
-        <div id="simplified-error" class="form-campo hidden" role="region" aria-live="assertive" style="color: red;"></div>
-        <br>
-        <p class="form-campo">Obs: A documentação técnica é gerada automaticamente a partir do código inserido usando IA.</p>
-    </div>
-</div>
-<footer>
-    <!-- Logo ZUP -->
-    <div class="logo">
-        <img src="https://d335luupugsy2.cloudfront.net/cms/files/449712/1720748328/$25o6htor9vc" alt="Logo ZUP">
-    </div>
+        <textarea id="texto" class="form-campo" placeholder="Cole o código para gerar a documentação aqui." aria-label="Campo de código"></textarea>
 
-    <!-- Logo Diversidade & Inclusão -->
-    <div class="logo">
+        <button class="mt-2 mb-2" onclick="simplificarTexto()">Gerar Documentação</button>
+
+        <div class="resultadoSimplify">
+            <div id="simplified-text-result" class="form-campo hidden" role="region" aria-live="polite"></div>
+        </div>
+
+        <div id="loading-indicatorSimplify" class="hidden mt-2 loading-indicator">Carregando descrição...</div>
+
+        <time id="modal-timeSimplify" class="hidden"></time> <!-- Temporizador -->
+
+        <div class="botoes">
+            <button id="botaoOuvirTextoSimplify" class="hidden mt-2" onclick="ouvirTextoSimplify()">Ouvir Tradução</button>
+            <button id="pararOuvirSimplify" class="hidden mt-2 mb-2" onclick="pararOuvirSimplify()">Parar Leitura</button>
+        </div>
+
+        <div class="descricao">
+            <div id="simplified-error" class="form-campo hidden" role="region" aria-live="assertive" style="color: red;"></div>
+            <p class="form-campo">Obs: A documentação técnica é gerada automaticamente a partir do código inserido usando IA.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-logos">
+        <img src="https://d335luupugsy2.cloudfront.net/cms/files/449712/1720748328/$25o6htor9vc" alt="Logo ZUP">
         <img src="https://d335luupugsy2.cloudfront.net/cms/files/449712/1720748328/$e5bxls21tk" alt="Logo Diversidade & Inclusão">
     </div>
 </footer>
+
 </body>
 </html>

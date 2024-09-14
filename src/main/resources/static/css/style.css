@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #e8eff1;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/000/556/930/non_2x/space-with-stars-universe-space-infinity-and-starlight-background-starry-night-sky-galaxy-and-planets-in-cosmos-pattern-vector.jpg");
     color: #333;
     display: flex;
     flex-direction: column;
@@ -16,6 +16,20 @@ body {
     padding: 20px;
 }
 
+/* Div superior (header) */
+.top-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 12px;
+    height: 20vh; /* Define a altura da div superior */
+    background: linear-gradient(to left, #0B0F22, #5B7854); /* Gradiente inverso ao footer */
+}
+
+.top-div img {
+    height: 150px; /* Tamanho da logo no topo */
+}
 /* Contêiner principal */
 .container {
     width: 100%;
@@ -226,14 +240,37 @@ button i {
 }
 
 /* Estilo para o rodapé */
+/* Estilos do footer */
 footer {
-    padding: 20px;
-    background-color: #004d99;
-    color: #ffffff;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    padding: 12px;
     border-radius: 12px;
-    margin-top: 30px;
+    background: linear-gradient(to right, #0B0F22, #5B7854); /* Gradiente baseado na imagem */
+
+}
+
+footer img {
+    height: 120px; /* Tamanho das logos */
+}
+
+footer .logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos opcionais para links ou informações no footer */
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #A8DADC; /* Cor para hover */
 }
 
 /* Responsividade */

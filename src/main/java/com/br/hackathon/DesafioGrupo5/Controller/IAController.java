@@ -17,7 +17,6 @@ public class IAController {
         this.openAIService = openAIService;
     }
 
-
     @PostMapping("/descrever-imagem")
     public ResponseEntity<Map<String, String>> descreverImagem(@RequestParam("url") String imageUrl, @RequestParam("model") String model) {
         try {

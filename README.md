@@ -61,8 +61,6 @@ Nosso objetivo é garantir que documentações técnicas sejam acessíveis a tod
 - **Java 17**
 - **Spring Boot**
 - **API OpenAI**
-- **PDFBox**
-- **GitHub API**
 
 ### **Frontend**
 - **HTML5**, **CSS3**, **JavaScript (JQuery)**

@@ -17,7 +17,9 @@
 
 ## **📋 Sobre o Projeto**
 
-Este projeto foi desenvolvido como parte do Hackathon da Zup, com o objetivo de criar uma solução inovadora para a produção de **documentação com 100% de acessibilidade**. Ele utiliza IA para facilitar o acesso e compreensão, especialmente para pessoas com deficiência visual ou que utilizam leitores de tela.
+Este projeto foi desenvolvido como parte do Hackathon da Zup, com o objetivo de criar uma solução inovadora para a produção de **documentação com 100% de acessibilidade**. 
+Ele utiliza IA para facilitar o acesso e compreensão, reunindo em uma mesma aplicação 3 key features que juntas colaboram para a criação de documentação mais acessível.
+O projeto foi pensado, do escopo a UI, para a maior abrangência de acessibilidade.
 
 ## **👥 Integrantes da Equipe**
 
@@ -32,7 +34,8 @@ Este projeto foi desenvolvido como parte do Hackathon da Zup, com o objetivo de 
 
 ## **🎯 Objetivo do Projeto**
 
-Nosso objetivo é garantir que documentações técnicas sejam acessíveis a todos, utilizando ferramentas que simplifiquem a linguagem e descrevam imagens de forma clara e acessível para usuários com deficiência visual ou leitores de tela.
+Nosso objetivo é garantir que documentações técnicas sejam acessíveis a todos, utilizando ferramentas que simplifiquem a linguagem e descrevam imagens de forma clara e acessível para usuários com deficiência visual, 
+dislexia/tdah/autismo e surdez.
 
 ---
 
@@ -42,13 +45,33 @@ Nosso objetivo é garantir que documentações técnicas sejam acessíveis a tod
     - Gera descrições automáticas de imagens a partir de URLs fornecidas pelos usuários.
     - As descrições geradas são acessíveis para síntese de voz.
     - Função para **Ouvir Tradução** e **Parar Leitura** das descrições geradas.
+   
+      - **Para quem serve?**
+    - Deficientes visuais, parciais ou totais
+    - Baixa visão
+    - Dislexia
+    - Dificuldade de leitura
+
 
 2. **📝 Simplificação de Textos Usando IA**
     - Simplifica textos complexos para uma versão mais clara e acessível.
     - Ótimo para tornar conteúdos técnicos mais compreensíveis.
     - Função para **Ouvir Tradução** e **Parar Leitura** dos textos simplificados.
+      - **Para quem serve?**
+   - Deficientes auditivos
+   - Baixo domínio da língua portuguesa
+   - Dislexia
+   - Dificuldade de leitura
+   - Autismo
 
-3. **⚙️ Acessibilidade da Interface**
+
+3. **💬️ Text-to-Speech**
+   - Deficiência visual
+   - Aumentar a produtividade na hora da colaboração ou revisão de uma documentação
+   - dislexia e tdah, removendo mais uma barreira de linguagem ao ouvir, visto que a maioria das documentações são baseadas também em outras documentações ou diretrizes escritas
+
+
+4. **⚙️ Acessibilidade da Interface**
     - Opções de alteração de fonte (maior, menor e padrão).
     - Modos de cores: **Alto contraste**, **Modo noturno** e **Inversão de cores**.
     - Suporte para a ferramenta **VLibras** para tradução de conteúdo em Libras.

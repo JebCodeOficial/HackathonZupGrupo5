@@ -10,6 +10,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class OpenAIService {
@@ -21,8 +23,24 @@ public class OpenAIService {
 
     public String gerarTextoIA(String prompt, String model) {
         try {
-            String requestBody = String.format("{\"model\":\"%s\",\"messages\":[{\"role\":\"user\",\"content\":\"%s\"}],\"max_tokens\":4096}", model, prompt);
+            // Usando ObjectMapper para construir o JSON de forma segura
+            ObjectMapper objectMapper = new ObjectMapper();
 
+            // Criação do corpo da requisição como um Map
+            Map<String, Object> requestBodyMap = new HashMap<>();
+            requestBodyMap.put("model", model);
+
+            // Construindo o array messages com o prompt
+            Map<String, String> message = new HashMap<>();
+            message.put("role", "user");
+            message.put("content", prompt);
+            requestBodyMap.put("messages", new Map[] { message });
+            requestBodyMap.put("max_tokens", 1000);
+
+            // Convertendo o Map em JSON String
+            String requestBody = objectMapper.writeValueAsString(requestBodyMap);
+
+            // Construindo a requisição HTTP
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create("https://api.openai.com/v1/chat/completions"))
@@ -31,14 +49,14 @@ public class OpenAIService {
                     .POST(HttpRequest.BodyPublishers.ofString(requestBody, StandardCharsets.UTF_8))
                     .build();
 
+            // Enviando a requisição e lidando com a resposta
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
             if (response.statusCode() == 200) {
-                JsonNode rootNode = new ObjectMapper().readTree(response.body());
+                JsonNode rootNode = objectMapper.readTree(response.body());
                 return rootNode.path("choices").get(0).path("message").path("content").asText();
             } else {
-                // Lida com os erros retornados pela API da OpenAI
-                JsonNode errorNode = new ObjectMapper().readTree(response.body());
+                JsonNode errorNode = objectMapper.readTree(response.body());
                 String errorMessage = errorNode.path("error").path("message").asText();
                 if (errorNode.path("error").path("code").asText().equals("insufficient_quota")) {
                     return "Erro: Cota excedida. Por favor, verifique seu plano e detalhes de faturamento.";
